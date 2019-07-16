@@ -1,25 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {HashRouter as Router,Route,NavLink,Switch,Redirect} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+          <ul>
+            <li>个人中心</li>
+            <li>了解更多</li>
+            <li>文档</li>
+            <li><NavLink>首页</NavLink></li>
+          </ul>
+        </div>)
+        <Switch>
+        <Redirect from="/" to="/"/>
+        <Route/>
+        <Route/>
+        <Route/>
+        <Route path="/" component={App}/>
+        </Switch>
+      </Router>
   );
 }
 
